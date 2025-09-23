@@ -1,42 +1,30 @@
-Quick Start Guide: Agents for Amazon Bedrock Test UI
-✅ Step 1: Prerequisites
+# Agents for Amazon Bedrock Test UI
 
-Install AWS CLI
-Install Python 3
+A generic Streamlit UI for testing generative AI agents built using Agents for Amazon Bedrock. For more information, refer to the blog post [Developing a Generic Streamlit UI to Test Amazon Bedrock Agents](https://blog.avangards.io/developing-a-generic-streamlit-ui-to-test-amazon-bedrock-agents).
 
+# Prequisites
 
-✅ Step 2: Install Dependencies
-Run:
-pip install -r requirements.txt
+- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+- [Python 3](https://www.python.org/downloads/)
 
+# Running Locally
 
-✅ Step 3: Configure Environment Variables
+1. Run the following `pip` command to install the dependencies:
 
+   ```
+   pip install -r requirements.txt
+   ```
 
-Required:
+2. Set the following environment variables either directly or using a `.env` file (use `.env.template` as a starting point):
+   - `BEDROCK_AGENT_ID` - The ID of the agent.
+   - `BEDROCK_AGENT_ALIAS_ID` - The ID of the agent alias. The default `TSTALIASID` will be used if it is not set.
+   - The [AWS environment variables](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html) that provides the credentials to your account. The principal must have the necessary permissions to invoke the Bedrock agent.
+3. (Optional) Set the following environment variables similarly to customize the UI:
+   - `BEDROCK_AGENT_TEST_UI_TITLE` - The page title. The default `Agents for Amazon Bedrock Test UI` will used if it is not set.
+   - `BEDROCK_AGENT_TEST_UI_ICON` - The favicon, such as `:bar_chart:`. The default Streamlit icon will be used if it is not set.
+4. (Optional) Set the `LOG_LEVEL` environment variable for additional logging using a standard format. If more advanced configuration is needed, copy `logging.yaml.template` and `logging.yaml` and configure it as appropriate.
+5. Run the following command to start the Streamlit app:
 
-BEDROCK_AGENT_ID → Your agent ID
-BEDROCK_AGENT_ALIAS_ID → Agent alias ID (defaults to TSTALIASID)
-AWS credentials with permissions to invoke the Bedrock agent
-
-
-
-Optional:
-
-BEDROCK_AGENT_TEST_UI_TITLE → Custom page title
-BEDROCK_AGENT_TEST_UI_ICON → Custom favicon (e.g., :bar_chart:)
-LOG_LEVEL → Logging level (or use logging.yaml for advanced config)
-
-
-
-
-✅ Step 4: Run the App
-Run the following command in your terminal:
-streamlit run app.py --server.port=8080 --server.address=localhost
-
-✅ Setup Flow Diagram
-Here’s a visual representation of the setup process:
-!Setup Flow Diagram
-
-<img width="1024" height="1536" alt="Designer" src="https://github.com/user-attachments/assets/c77b7b91-e8a6-40f2-8f2f-daeb66f676c6" />
-
+   ```
+   streamlit run app.py --server.port=8080 --server.address=localhost
+   ```
