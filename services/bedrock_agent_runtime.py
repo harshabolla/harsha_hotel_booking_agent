@@ -10,8 +10,8 @@ def invoke_agent(agent_id, agent_alias_id, session_id, prompt):
         client = boto3.session.Session().client(service_name="bedrock-agent-runtime", region_name='us-east-1')               #1 Add Region Name
         # See https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/bedrock-agent-runtime/client/invoke_agent.html
         response = client.invoke_agent(
-            agentId='UGQYQ1LOHU',                     #2 Add Agent ID
-            agentAliasId='DTNVVKTL0R',                #3 Add Agent Alias ID
+            agentId='paste ur id herer',                     #2 Add Agent ID
+            agentAliasId=paste ur id herer',                #3 Add Agent Alias ID
             enableTrace=True,
             sessionId=session_id,
             inputText=prompt
@@ -53,3 +53,4 @@ def invoke_agent(agent_id, agent_alias_id, session_id, prompt):
         "citations": citations,
         "trace": trace
     }
+
